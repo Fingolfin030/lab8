@@ -1,0 +1,32 @@
+#Aidan Boyle
+#5/19/2020
+#AP Computer Science
+
+import math
+
+def calculate(n):
+    factors = 0
+    #establishes the base for factors
+    for i in xrange(1, int(math.ceil(math.sqrt(n)))+1):
+    #math.ceil returns the smallest integer that fulfills the argument
+    #the +1 is needed to account for perfect squares
+        if n % i == 0:
+            factors +=2
+    #if it can be divided there are factors
+        if i^2==n:
+            factors -=1
+    #if it can't, a factor is removed
+    return factors
+
+num1=1
+#the first triangular number
+upperrange=123456789
+#we need an arbitrarily large number to bound us to find a solution
+for i in range(2,upperrange):
+    num1 += i
+#adds to the number everytime it iterates through
+    if calculate(num1) >= 500:
+#when it finds one with enough divisors, it stops the program
+        print num1
+        break
+        
