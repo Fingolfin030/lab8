@@ -1,0 +1,15 @@
+#Aidan Boyle
+#Lab 8
+#AP Computer Science
+
+def triplet():
+ for a in xrange(1,1000):
+  for b in xrange(1,1000):
+#Iterates over all potential combinations of values up to 1000
+   c = 1000-a-b
+#Based on pythagorean idenitity
+   if (a**2+b**2) == c**2:
+#This verfieies if it is a a triplet
+    return a*b*c
+
+print triplet()
